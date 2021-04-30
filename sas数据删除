@@ -1,0 +1,7 @@
+/*删除指定行*/
+data month1;
+set  month NOBS=COUNT;/*生成新虚拟变量看数据集有多少观测*/
+if _n_        <= 5 then delete;/*前5行*/
+if count -_n_ <  5 then delete;/*后5行*/
+n_=_n_;
+run;
